@@ -1,0 +1,4 @@
+experiments/**/build/
+experiments/**/build_*/
+experiments/**/hw/build_*/
+experiments/**/sw/build_*/

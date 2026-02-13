@@ -1,0 +1,9 @@
+.vscode/
+bin/
+obj/
+data/input/generated/
+data/input/SE0_cpp/
+data/input/SE2_cpp/
+data/output/
+./cuda_tests
+./cuda_tests/*

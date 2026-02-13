@@ -1,0 +1,3 @@
+[submodule "Coyote"]
+	path = Coyote
+	url = https://github.com/fpgasystems/Coyote
