@@ -72,7 +72,7 @@ make
 The binary can be found in `sw/build_server/test`.
 
 
-## Running the experiment 
+## Running the examples 
 
 #### Deploying the example 
 The same steps as described in *1_microbenchmarks* apply in this case (flashing of bitstream, PCIe-rescan and driver insertion, preferrably through `program_hacc_local.sh`). It is important to note that this needs to be done independently for both the client and the server. The server will always deploy the *rdma_clean*-bitstream, while we switch between *rdma_scatter* and *rdma_clean* for the client in the different experiments (P2P vs. baseline).
