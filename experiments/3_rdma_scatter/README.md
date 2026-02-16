@@ -64,8 +64,7 @@ The binary can be found in `sw/build_client_non_p2p/test`.
 ```bash
 cd sw
 mkdir build_server && cd build_server
-export CXX=hipcc
-cmake ../ -DINSTANCE=server -DEN_GPU=1
+cmake ../ -DINSTANCE=server
 make
 ```
 
