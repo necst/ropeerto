@@ -26,7 +26,7 @@
 
 # CMake configuration
 cmake_minimum_required(VERSION 3.5)
-set(CYT_DIR ${CMAKE_SOURCE_DIR}/../../../../Coyote)
+set(CYT_DIR ${CMAKE_SOURCE_DIR}/../../../Coyote)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CYT_DIR}/cmake)
 find_package(CoyoteHW REQUIRED)
 
