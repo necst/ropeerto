@@ -58,7 +58,7 @@ double run_bench(
     uint8_t *mem, int* dest_buffers[], uint transfers, uint n_runs, bool operation
 ) {
 
-    printf("Running benchmark with transfer size %d bytes, repeated %d times\n", sg.len, transfers);
+    // printf("Running benchmark with transfer size %d bytes, repeated %d times\n", sg.len, transfers);
     // When writing, the server asserts the written payload is correct (which the client sets)
     // When reading, the client asserts the read payload is correct (which the server sets)
     for (int i = 0; i < sg.len / sizeof(int); i++) {
@@ -214,7 +214,7 @@ int main(int argc, char *argv[])  {
         if(throughput) {
             double throughput_time = run_bench(coyote_thread, sg, mem, dest_buffers, N_THROUGHPUT_REPS, n_runs, operation);
             double throughput = ((double) N_THROUGHPUT_REPS * (double) curr_size) / (1024.0 * 1024.0 * throughput_time * 1e-9);
-            std::cout << "Average throughput: " << std::setw(8) << throughput << " MB/s; ";
+            std::cout << "Average throughput: " << std::setw(8) << throughput << " MB/s; " << std::endl;
             baseline_results_file << throughput << std::endl;
         } else {
         

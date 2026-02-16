@@ -41,7 +41,7 @@ series_meta = [
 
 # Plot each series
 for label, color, suffix, marker, hatch in series_meta:
-    avg = df[f'avg_{suffix}']
+    avg = df[f'avg_{suffix}']/1000
     x = x_pos
 
     # Sanity check
