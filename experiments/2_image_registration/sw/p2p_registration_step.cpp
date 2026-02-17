@@ -330,9 +330,9 @@ int main(int argc, char **argv) {
   coyote_thread.userUnmap((void *)out);
   coyote_thread.userUnmap((void *)mutual_info);
   coyote_thread.userUnmap((void *)n_couples_mem);
-  free(float_cpu);
 
   save_volume_into_folder(float_cpu, DIMENSION, depth, out_dir);
+  free(float_cpu);
 
   timing_file.close();
   return 0;

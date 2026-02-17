@@ -1,4 +1,4 @@
-# Experiment 3: RDMA Scatter with RoPeerTo
+# 3. RDMA Scatter with RoPeerTo
 
 This directory containts the software and hardware source code for the results of Section 4 of the EuroSys'26 paper: *RoPeerTo: A Datacenter-Scale Architecture for Peer-To-Peer DMA between GPUs and FPGAs*.
 

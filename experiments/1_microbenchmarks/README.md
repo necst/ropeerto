@@ -1,4 +1,4 @@
-# 4. GPU - FPGA P2P micro-benchmarks
+# 1. GPU - FPGA P2P micro-benchmarks
 
 This directory contains the software and hardware source code for the results of Section 4 of the EuroSys'26 paper: *RoPeerTo: A Datacenter-Scale Architecture for Peer-To-Peer DMA between GPUs and FPGAs*.
 

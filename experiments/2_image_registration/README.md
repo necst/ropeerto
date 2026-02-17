@@ -1,4 +1,4 @@
-# 5. Image Registration
+# 2. Image Registration
 
 This directory contains the software and hardware source code for the results of Section 5 of the EuroSys'26 paper: *RoPeerTo: A Datacenter-Scale Architecture for Peer-To-Peer DMA between GPUs and FPGAs*.
 
@@ -294,6 +294,17 @@ Example:
 ./p2p_baseline <vfpga_id> ../volumes/floating/ ../volumes/reference/
 ```
 
+**Compute Speedup**
+
+Finally, to compute speedup, please run:
+```bash
+python3 compute_speedup.py <SW_FILE> <HW_FILE>
+```
+
+<ul>
+<li><em>SW_FILE</em>: software CSV file</li>
+<li><em>HW_FILE</em>: hardware CSV file</li>
+</ul>
 
 
 # Register Programming
