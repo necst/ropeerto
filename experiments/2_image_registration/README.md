@@ -108,8 +108,8 @@ cmake .. -DFDEV_NAME=u55c \
   -DMI_HISTOTYPE=float \
   -DMI_IN_DIM=512 \
   -DMI_IN_BITS=8 \
-  -DMI_PE_NUMBER=8 \
-  -DMI_PE_ENTROPY=8 \
+  -DMI_PE_NUMBER=16 \
+  -DMI_PE_ENTROPY=16 \
   -DMI_N_COUPLES_MAX=512 \
   -DMI_ENTR_ACC_SIZE=8 \
   -DMI_BIN_VAL=0 \
@@ -126,8 +126,8 @@ Once complete, a bitstream can be found in: `hw/build/bitstreams/cyt_top.bit`. O
 
 The provided design targets the **U55C** platform, indentically to the one that can be synthesized by following the steps described below. It features:
 
-- **8 Processing Elements (PEs)** for histogram computation  
-- **8 Processing Elements (PEs)** for entropy computation  
+- **16 Processing Elements (PEs)** for histogram computation  
+- **16 Processing Elements (PEs)** for entropy computation  
 
 Both stages follow a **map-reduce** computational approach.
 
@@ -297,18 +297,15 @@ Example:
 ./p2p_baseline <vfpga_id> ../volumes/floating/ ../volumes/reference/
 ```
 
-**Compute Speedup**
+**Automatically Evaluate Speedup**
 
-Finally, to compute speedup, please run:
+We provide an auxiliary script that automatically evaluates speedup for registration step, comparing peer-to-peer and non-peer-to-peer versions.
+
+Please run:
 ```bash
-python3 compute_speedup.py <SW_FILE> <HW_FILE>
+cd sw
+./ae.sh 
 ```
-
-<ul>
-<li><em>SW_FILE</em>: software CSV file</li>
-<li><em>HW_FILE</em>: hardware CSV file</li>
-</ul>
-
 
 # Register Programming
 
