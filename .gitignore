@@ -2,3 +2,7 @@ experiments/**/build/
 experiments/**/build_*/
 experiments/**/hw/build_*/
 experiments/**/sw/build_*/
+experiments/2_image_registration/sw/output
+experiments/2_image_registration/sw/output/*
+experiments/2_image_registration/sw/logs
+experiments/2_image_registration/sw/logs/*

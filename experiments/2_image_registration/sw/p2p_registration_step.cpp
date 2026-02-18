@@ -164,6 +164,7 @@ void compare_and_save_mi(float mi_sw, float mi_hw) {
 }
 
 int main(int argc, char **argv) {
+  std::cout << "P2P Registration Step\n";
   if (argc < 10) {
     std::cerr << "Usage: " << argv[0]
               << " <vfpga_id> <PET_folder> <CT_folder> <out_folder>"

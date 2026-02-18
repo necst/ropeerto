@@ -242,6 +242,7 @@ bool get_xclbin_path(std::string &out) {
 #define DEFAULT_VFPGA_ID 0
 
 int main(int argc, char **argv) {
+  std::cout << "NON P2P Registration Step\n";
   float tx, ty, ang;
 #ifdef COYOTE_MODE
 
@@ -337,21 +338,11 @@ int main(int argc, char **argv) {
   std::vector<double> times(runs, 0.0);
 
   for (int i = 0; i < runs; i++) {
-    if (i == 3) {
+
       tx = user_tx;   // Use user-defined tx
       ty = user_ty;   // Use user-defined ty
       ang = user_ang; // Use user-defined angle
-    } else {
-      srand(static_cast<unsigned int>(time(0) +
-                                      i)); // Seed with time and run index
-      // Generate random TX and TY between -50 and 50
-      tx =
-          static_cast<float>(rand() % 100 - 50); // Random tx between -50 and 50
-      ty =
-          static_cast<float>(rand() % 100 - 50); // Random ty between -50 and 50
-      ang = static_cast<float>(rand() % 30 + 10) /
-            100.0f; // Random angle between 0.1 and 0.4
-    }
+
 
     // 2) Hip Transform
     std::cout << "Running HIP warp...\n";
