@@ -247,8 +247,8 @@ int main(int argc, char **argv) {
 
   if (argc < 10) {
     std::cerr << "Usage: " << argv[0]
-              << " <vfpga_id> <PET_folder> <CT_folder> <out_folder> "
-                 "<tx> <ty> <ang> <runs> <gpu_id>\n";
+              << " <vfpga_id> <PET_folder> <CT_folder> <out_folder>"
+                 " <tx> <ty> <ang> <runs> <gpu_id> [depth]\n";
     return 1;
   }
 
@@ -256,8 +256,8 @@ int main(int argc, char **argv) {
 #else
   if (argc < 10) {
     std::cerr << "Usage: " << argv[0]
-              << " <xclbin_path> <PET_folder> <CT_folder> <out_folder> "
-                 "<tx> <ty> <ang> <runs> <gpu_id>\n";
+              << " <vfpga_id> <PET_folder> <CT_folder> <out_folder>"
+                 " <tx> <ty> <ang> <runs> <gpu_id> [depth]\n";
     return 1;
   }
   // 1) Read the path to the bitstream
@@ -276,7 +276,14 @@ int main(int argc, char **argv) {
 
   hipSetDevice(gpu_id);
 
-  int depth = 246; // depth of the volumes
+  int depth = 246;
+  if (argc >= 11) {
+    depth = std::atoi(argv[10]);
+    if (depth <= 0) {
+      std::cerr << "Error: depth must be > 0\n";
+      return 1;
+    }
+  }
   size_t elems = DIMENSION * DIMENSION * depth;
   uint32_t bytes = elems * sizeof(uint8_t);
 
@@ -288,7 +295,6 @@ int main(int argc, char **argv) {
 
   for (int i = 0; i < 10; i++)
     hip_transform.run(0, 0, 0);
-  // Loop over 'runs' iterations, generate random tx/ty/angle
   std::cout << "Running " << runs
             << " iterations with random transformations...\n";
 

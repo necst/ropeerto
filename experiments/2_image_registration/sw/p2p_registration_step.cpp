@@ -166,8 +166,8 @@ void compare_and_save_mi(float mi_sw, float mi_hw) {
 int main(int argc, char **argv) {
   if (argc < 10) {
     std::cerr << "Usage: " << argv[0]
-              << " <vfpga_id> <PET_folder> <CT_folder> <out_folder> "
-                 "<tx> <ty> <ang> <runs> <gpu_id>\n";
+              << " <vfpga_id> <PET_folder> <CT_folder> <out_folder>"
+                 " <tx> <ty> <ang> <runs> <gpu_id> [depth]\n";
     return 1;
   }
 
@@ -190,22 +190,28 @@ int main(int argc, char **argv) {
   }
   timing_file << "time\n";
 
-  int depth = 246; // depth of the volumes
+  int depth = 246;
+  if (argc >= 11) {
+    depth = std::atoi(argv[10]);
+    if (depth <= 0) {
+      std::cerr << "Error: depth must be > 0\n";
+      return 1;
+    }
+  }
   size_t elems = DIMENSION * DIMENSION * depth;
   uint32_t bytes = elems * sizeof(uint8_t);
 
   RigidWarpXYPlane hip_transform;
 
   hipSetDevice(gpu_id);
-
-  // for (int i = 0; i < 10; i++)
-  //   hip_transform.run(0, 0, 0);
+  std::cout << "Warming up HIP kernel...\n";
+  for (int i = 0; i < 10; i++)
+    hip_transform.run(0, 0, 0);
 
   std::cout << "Allocating memory for volumes...\n";
   uint8_t *float_cpu =
       (uint8_t *)malloc(DIMENSION * DIMENSION * depth * sizeof(uint8_t));
-  // uint8_t* ref_cpu = (uint8_t*)malloc(DIMENSION * DIMENSION * depth *
-  // sizeof(uint8_t));
+
   uint64_t n_couples_cpu = depth;
 
   coyote::cThread coyote_thread(vfpga_id, getpid(), 0);
@@ -242,18 +248,6 @@ int main(int argc, char **argv) {
   read_volume_from_folder(float_cpu, DIMENSION, depth, pet_dir);
   read_volume_from_folder(ref, DIMENSION, depth, ct_dir);
 
-  // fill ref of null values
-  // memset(ref, 0, bytes);
-  // fill ref with random values
-  // for (int i = 0; i < bytes; i++) {
-  //   ref[i] = static_cast<uint8_t>(rand() % 256);
-  // }
-  // read_volume_from_folder(float_cpu, DIMENSION, depth, pet_dir);
-  // memset(float_cpu, 0, bytes);
-  // for (int i = 0; i < bytes; i++) {
-  //   float_cpu[i] = static_cast<uint8_t>(rand() % 256);
-  // }
-
   hip_transform.moveToGPU(flt, float_cpu, DIMENSION, depth);
   std::cout << "Warming up HIP kernel...\n";
   for (int i = 0; i < 10; i++) {
@@ -266,11 +260,6 @@ int main(int argc, char **argv) {
 
     std::cout << "Running HIP warp...\n";
 
-    /*
-    // fill float_cpu with random values
-    for (int k = 0; k < DIMENSION * DIMENSION * depth * sizeof(uint8_t); k++) {
-      float_cpu[k] = static_cast<uint8_t>(rand() % 256);
-    }*/
 
     *n_couples_mem = static_cast<uint64_t>(depth);
 
@@ -278,27 +267,15 @@ int main(int argc, char **argv) {
     std::chrono::high_resolution_clock::time_point time_start =
         std::chrono::high_resolution_clock::now();
     hip_transform.moveToGPU(flt, float_cpu, DIMENSION, depth);
-    // std::chrono::high_resolution_clock::time_point time_end =
-    //     std::chrono::high_resolution_clock::now();
-    // std::chrono::duration<double> elapsed = time_end - time_start;
-    // timing_file << elapsed.count() << ",";
 
     double t =
         hip_transform.run_external(flt, out, tx, ty, ang, DIMENSION, depth);
 
-    // timing_file << t <<",";
-
-    // std::cout << "HIP exec time: " << t << " s\n";
-
-    // std::cout << "Computing Mutual Information...\n";
-
-    // time_start_kernel = std::chrono::high_resolution_clock::now();
     compute_mi(coyote_thread, out, ref, mutual_info, n_couples_mem,
                timing_file);
     auto time_end = std::chrono::high_resolution_clock::now();
     auto elapsed = std::chrono::duration<double>(time_end - time_start);
-    //  std::cout << "Registration step exec time: " << elapsed.count() << "
-    //  s\n";
+
     times[i] = elapsed.count(); // Store the time for this run
 
     float mi_value = 0.0f;
