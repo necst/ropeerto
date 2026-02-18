@@ -1,0 +1,2212 @@
+{
+    "ltx_root": {
+        "version": 4,
+        "minor": 0,
+        "ltx_data": [
+            {
+                "name": "EDA_PROBESET",
+                "active": true,
+                "debug_cores": [
+                    {
+                        "type": "XSDB_V3",
+                        "name": "inst_static/inst_debug_hub/inst/xsdbm",
+                        "spec": "labtools_xsdbm_v3",
+                        "clk_input_freq_hz": "100000000"
+                    },
+                    {
+                        "type": "XSDB_V3",
+                        "name": "inst_shell/inst_dynamic/inst_user_wrapper_0/inst_debug_bridge_user/inst/xsdbm",
+                        "spec": "labtools_xsdbm_v3",
+                        "reconfigTop": "inst_shell",
+                        "clk_input_freq_hz": "100000000"
+                    },
+                    {
+                        "type": "XSDB_V3",
+                        "name": "inst_shell/inst_debug_bridge_dynamic/inst/xsdbm",
+                        "spec": "labtools_xsdbm_v3",
+                        "reconfigTop": "inst_shell",
+                        "clk_input_freq_hz": "100000000"
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "inst_static/inst_vio_static_decoupling",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "uuid": "46F42D76E0CD5A36924A05B9E3307619",
+                        "pins": [
+                            {
+                                "name": "probe_in0",
+                                "id": 0,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "inst_static/decouple",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in1",
+                                "id": 1,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "inst_static/eos_resetn",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out0",
+                                "id": 2,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "inst_static/pr_slct",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out1",
+                                "id": 3,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "inst_static/decouple_vio",
+                                        "isBus": false
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_out2",
+                                "id": 4,
+                                "type": "DATA",
+                                "direction": "OUT",
+                                "isVector": false,
+                                "leftIndex": 0,
+                                "rightIndex": 0,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "inst_static/eos_resetn_vio",
+                                        "isBus": false
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "XSDBS_V2",
+                        "name": "inst_shell/inst_int_hbm/hbm_inst",
+                        "spec": "labtools_xsdbslavelib_v2",
+                        "ipName": "hbm",
+                        "reconfigTop": "inst_shell",
+                        "uuid": "0A0A516C1E1551FC87B86578C474AD90"
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "inst_static/inst_vio_static_xstats_ch2",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "uuid": "76027CCBB9785585B49D2BE6CD79CDFD",
+                        "pins": [
+                            {
+                                "name": "probe_in0",
+                                "id": 5,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_req_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in1",
+                                "id": 6,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_req_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in2",
+                                "id": 7,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_cmpl_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in3",
+                                "id": 8,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_cmpl_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in4",
+                                "id": 9,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_h2c_axis_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in5",
+                                "id": 10,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_static/xdma_stats_stat[bpss_c2h_axis_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "inst_shell/inst_vio_shell_xstats_ch0",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "reconfigTop": "inst_shell",
+                        "uuid": "452C765DC6235432AF426BC675A5AB14",
+                        "pins": [
+                            {
+                                "name": "probe_in0",
+                                "id": 11,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_req_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in1",
+                                "id": 12,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_req_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in2",
+                                "id": 13,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_cmpl_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in3",
+                                "id": 14,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_cmpl_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in4",
+                                "id": 15,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_h2c_axis_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in5",
+                                "id": 16,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_0[bpss_c2h_axis_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "VIO_V2",
+                        "name": "inst_shell/inst_vio_shell_xstats_ch1",
+                        "spec": "labtools_vio_v3",
+                        "ipName": "vio",
+                        "reconfigTop": "inst_shell",
+                        "uuid": "4A5176E4215B54D6BD26B666E874CEB3",
+                        "pins": [
+                            {
+                                "name": "probe_in0",
+                                "id": 17,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 0,
+                                "nets": [
+                                    {
+                                        "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_req_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in1",
+                                "id": 18,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 1,
+                                "nets": [
+                                    {
+                                        "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_req_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in2",
+                                "id": 19,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 2,
+                                "nets": [
+                                    {
+                                        "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_cmpl_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in3",
+                                "id": 20,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 3,
+                                "nets": [
+                                    {
+                                        "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_cmpl_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in4",
+                                "id": 21,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 4,
+                                "nets": [
+                                    {
+                                        "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_h2c_axis_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name": "probe_in5",
+                                "id": 22,
+                                "type": "DATA",
+                                "direction": "IN",
+                                "isVector": true,
+                                "leftIndex": 0,
+                                "rightIndex": 31,
+                                "portIndex": 5,
+                                "nets": [
+                                    {
+                                        "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter]",
+                                        "isBus": true,
+                                        "subnets": [
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][31]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][30]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][29]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][28]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][27]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][26]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][25]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][24]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][23]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][22]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][21]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][20]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][19]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][18]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][17]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][16]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][15]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][14]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][13]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][12]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][11]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][10]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][9]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][8]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][7]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][6]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][5]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][4]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][3]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][2]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][1]"
+                                            },
+                                            {
+                                                "name": "inst_shell/xdma_stats_1[bpss_c2h_axis_counter][0]"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
