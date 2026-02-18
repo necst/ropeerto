@@ -182,6 +182,8 @@ int main(int argc, char **argv) {
   int runs = std::atoi(argv[8]);
   int gpu_id = std::atoi(argv[9]);
 
+  std::cout << "GPU ID: " << gpu_id << "\n";
+
   // write CSV file to save timing
   std::ofstream timing_file("./p2p_registration_step.csv", std::ios::app);
   if (!timing_file) {
@@ -201,9 +203,10 @@ int main(int argc, char **argv) {
   size_t elems = DIMENSION * DIMENSION * depth;
   uint32_t bytes = elems * sizeof(uint8_t);
 
-  RigidWarpXYPlane hip_transform;
-
   hipSetDevice(gpu_id);
+
+  RigidWarpXYPlane hip_transform(gpu_id);
+
   std::cout << "Warming up HIP kernel...\n";
   for (int i = 0; i < 10; i++)
     hip_transform.run(0, 0, 0);
@@ -253,10 +256,14 @@ int main(int argc, char **argv) {
   for (int i = 0; i < 10; i++) {
     hip_transform.run_external(flt, out, tx, ty, ang, DIMENSION, depth);
   }
+  uint8_t *float_cpu_orig = (uint8_t*)malloc(bytes);
+  if (!float_cpu_orig) throw std::runtime_error("malloc float_cpu_orig failed");
+  std::memcpy(float_cpu_orig, float_cpu, bytes);
 
   // array of times for each run, to average
   std::vector<double> times(runs, 0.0);
   for (int i = 0; i < runs; i++) {
+    std::memcpy(float_cpu, float_cpu_orig, bytes);
 
     std::cout << "Running HIP warp...\n";
 
@@ -302,6 +309,8 @@ int main(int argc, char **argv) {
   std::cout << "Average execution time over " << runs << " runs: " << avg_time
             << " s\n";
 
+  hipDeviceSynchronize();
+
   coyote_thread.userUnmap((void *)flt);
   coyote_thread.userUnmap((void *)ref);
   coyote_thread.userUnmap((void *)out);
@@ -310,6 +319,7 @@ int main(int argc, char **argv) {
 
   save_volume_into_folder(float_cpu, DIMENSION, depth, out_dir);
   free(float_cpu);
+  free(float_cpu_orig);
 
   timing_file.close();
   return 0;

@@ -273,6 +273,7 @@ int main(int argc, char **argv) {
   float user_ang = std::stof(argv[7]);
   int runs = std::atoi(argv[8]);
   int gpu_id = std::atoi(argv[9]);
+  std::cout << "GPU ID: " << gpu_id << "\n";
 
   hipSetDevice(gpu_id);
 
@@ -290,7 +291,7 @@ int main(int argc, char **argv) {
   // 2) HIP transform
   printGPUCapabilities_HIP();
 
-  RigidWarpXYPlane hip_transform;
+  RigidWarpXYPlane hip_transform(gpu_id);
   std::cout << "Warming up HIP kernel...\n";
 
   for (int i = 0; i < 10; i++)

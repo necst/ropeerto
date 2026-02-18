@@ -2,6 +2,9 @@
 
 This directory contains the software and hardware source code for the results of Section 5 of the EuroSys'26 paper: *RoPeerTo: A Datacenter-Scale Architecture for Peer-To-Peer DMA between GPUs and FPGAs*.
 
+![Image registration heuristic that iteratively aligns a floating volume with respect to its reference.](figures/application.jpg)
+
+
 The following is a brief guide on compiling and running this specific experiment presented in the paper. Most experiments consists of two folders: `hw` (hardware) and `sw` (software), both of which are built using `make`.
 
 Environment requirements & set-up
