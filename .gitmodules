@@ -1,3 +1,4 @@
 [submodule "Coyote"]
 	path = Coyote
-	url = https://github.com/fpgasystems/Coyote
+	url = https://github.com/mar-ven/Coyote.git
+	branch = reg_prog
