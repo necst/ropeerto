@@ -27,3 +27,18 @@ The repository is structured as follows:
 - `Coyote/`: contains the source code of Coyote, the FPGA architecture used in our work. Coyote is a novel FPGA architecture designed for datacenter environments, which provides a set of hardware services and vFPGAs for application acceleration. Coyote is open-source and can be used for research and development in FPGA-based acceleration.
 
 - `experiments/`: contains the source code and artifacts of the experiments presented in the paper. Each experiment is organized in a separate folder, which contains the hardware and software source code, as well as instructions for building and running the experiment. The experiments include microbenchmarks for evaluating the performance of RoPeerTo, as well as two real-world applications: 3D medical image registration, and distributed computing with scatter-gather. Please refer to the README.md file for each experiment for further info.
+
+## Paper Citation
+
+If you find this repository useful, please use the following citation:
+
+```latex
+@inproceedings{venere2026rpeerto,
+    title = {RoPeerTo: A Datacenter-Scale Architecture for Peer-To-Peer DMA between GPUs and FPGA},
+    author = {Venere, Marco and Sorrentino, Giuseppe and Ramhorst, Benjamin, and Heer, Maximilian Jakob and Petrica, Lucian and Korolija, Dario and Santambrogio, Marco Domenico and Conficconi, Davide and Alonso, Gustavo and O'Brien, Kenneth},
+    year = 2026,
+    booktitle={Proceedings of the Twentyfirst European Conference on Computer Systems},
+    organization={ACM},
+    series = {EuroSys '26}
+ }
+```
