@@ -131,14 +131,18 @@ int main(int argc, char *argv[])  {
     coyote::cThread coyote_thread(DEFAULT_VFPGA_ID, getpid(), 0);
     int *mem = (int *) coyote_thread.initRDMA(max_size, coyote::DEF_PORT, server_ip.c_str());
     if (!mem) { throw std::runtime_error("Could not allocate memory; exiting..."); }
-
-    // GPU memory will be allocated on the GPU set using hipSetDevice(...)
-    if (hipSetDevice(0)) { throw std::runtime_error("Couldn't select GPU!"); }
     
     // Allocate four buffers for the scatter operation 
-    int* vaddr_1 = (int *) coyote_thread.getMem({coyote::CoyoteAllocType::GPU, max_size, false, 0}); 
+    if (hipSetDevice(0)) { throw std::runtime_error("Couldn't select GPU!"); }
+    int* vaddr_1 = (int *) coyote_thread.getMem({coyote::CoyoteAllocType::GPU, max_size, false, 0});
+    
+    if (hipSetDevice(1)) { throw std::runtime_error("Couldn't select GPU!"); }
     int* vaddr_2 = (int *) coyote_thread.getMem({coyote::CoyoteAllocType::GPU, max_size, false, 1}); 
+
+    if (hipSetDevice(2)) { throw std::runtime_error("Couldn't select GPU!"); }
     int* vaddr_3 = (int *) coyote_thread.getMem({coyote::CoyoteAllocType::GPU, max_size, false, 2});
+
+    if (hipSetDevice(3)) { throw std::runtime_error("Couldn't select GPU!"); }
     int* vaddr_4 = (int *) coyote_thread.getMem({coyote::CoyoteAllocType::GPU, max_size, false, 3});
 
     // Print all the new buffer addresses
