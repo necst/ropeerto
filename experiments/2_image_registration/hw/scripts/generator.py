@@ -27,10 +27,11 @@ import math
 ###################################################################################################################################
 
 
+# Helper functions for pattern generation and configuration file writing
 def coord_idx_generator(i, id, chunks, pe):
     return math.floor((pe * i + id) / chunks)
 
-
+# Generate patterns for a given number of PEs and a specific PE index
 def generate_pattern(NUM_INT_PE, aie_idx):
     all_loops = []
     for j in range(1, NUM_INT_PE + 1):

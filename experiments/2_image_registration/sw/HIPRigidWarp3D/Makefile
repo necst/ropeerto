@@ -1,4 +1,4 @@
-# ------ Parametri di test ------
+# ------ Test parameters ------
 SIZE  := 512
 DEPTH := 128
 RUNS  := 5
@@ -11,42 +11,42 @@ SRC_DIR := src
 OBJ_DIR := obj
 BIN_DIR := bin
 
-# Impostazioni HIP per Ubuntu
+# HIP flags for Ubuntu
 HIPCC    := hipcc
 HIPFLAGS := -O3 -std=c++17
 
-# Include paths (modifica se necessario)
+# Include paths (modify if necessary)
 HIPFLAGS += -I./externals -I./src/utils -I./src/hip_kernels -DCPU_CHECK
 
-# Target: eseguibile del test HIP
+# Target: HIP test executable
 TARGET := $(BIN_DIR)/test_rigid_warp_hip
 
-# Sorgenti: includi il main e tutti gli altri file .cpp presenti in src e nelle sottocartelle
+# Sources: include main and all other .cpp files in src and its subdirectories
 SOURCES := $(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(SRC_DIR)/utils/*.cpp) $(wildcard $(SRC_DIR)/hip_kernels/*.cpp)
 
-# Oggetti: trasformiamo i sorgenti in file .o, mantenendo la struttura di directory
+# Objects: transform sources into .o files, maintaining directory structure
 OBJ := $(patsubst $(SRC_DIR)/%, $(OBJ_DIR)/%, $(SOURCES:.cpp=.o))
 
-# Regola di default: compila il target
+# Default rule: compile the target
 all: $(TARGET)
 
-# Regola per compilare ogni sorgente in oggetto
+# Rule to compile each source into object
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(dir $@)
 	$(HIPCC) $(HIPFLAGS) -c $< -o $@
 
-# Regola per il link dell'eseguibile
+# Rule for linking the executable
 $(TARGET): $(OBJ)
 	@mkdir -p $(BIN_DIR)
 	$(HIPCC) $(HIPFLAGS) $(OBJ) -o $(TARGET)
 
-# Regola per eseguire il test con i parametri predefiniti
+# Rule to run the test with default parameters
 run: $(TARGET)
-	@echo "Esecuzione di $(TARGET) con i seguenti parametri:"
+	@echo "Running $(TARGET) with the following parameters:"
 	@echo ">>> $(SIZE)x$(SIZE)x$(DEPTH) | $(RUNS) run | (tx=$(TX)px, ty=$(TY)px, ang=$(ANG)d)"
 	$(TARGET) --task $(TASK) -s $(SIZE) -d $(DEPTH) -r $(RUNS) -x $(TX) -y $(TY) -a $(ANG)
 
-# Pulizia degli oggetti e dell'eseguibile
+# Clean objects and executable
 clean:
 	rm -rf $(OBJ_DIR) $(BIN_DIR)
 

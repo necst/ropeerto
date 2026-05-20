@@ -15,7 +15,7 @@
 #include <any>
 #include "cThread.hpp" // Coyote thread
 #else
-// XRT / AIE includes
+// XRT 
 #include "experimental/xrt_kernel.h"
 #include "experimental/xrt_uuid.h"
 

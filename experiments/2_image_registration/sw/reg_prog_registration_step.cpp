@@ -124,7 +124,6 @@ __global__ void gpu_invoke(volatile uint32_t *ctrl_reg, int coper,
   uint64_t ctrl_cmd_r, ctrl_cmd_l;
 
   constexpr unsigned long const MAX_TRANSFER_SIZE = 128 * 1024 * 1024;
-  // just to remember that you CANNOT transfer more than 128 MB...
 
   ctrl_cmd_src[0] =
       // RD

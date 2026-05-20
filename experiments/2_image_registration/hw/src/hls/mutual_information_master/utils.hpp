@@ -131,19 +131,6 @@ void tri_stream(hls::stream<T> &in, hls::stream<T> &out0, hls::stream<T> &out1, 
     }
 }
 
-
-// template<typename T, unsigned int size>
-// void stream2axi(T* out, hls::stream<T> &in, bool end_reset){
-
-// 		for(int i = 0; i <size; i++){
-// 			#pragma HLS PIPELINE
-// 			T tmp = in.read();
-// 			if(end_reset)
-// 				out[i] = tmp;
-// 		}
-
-// }
-
 template<typename T, unsigned int size>
 void stream2axi(T* out, hls::stream<T> &in){
 

@@ -64,7 +64,6 @@ int test_rigid_warp_hip(int argc, char** argv) {
     
     std::printf("Load volume...\n");
     //generate_example_image(host_input_volume, args.size, args.depth);
-    // esempio di lettura di un volume da cartella:
     read_volume_from_folder(host_input_volume, args.size, args.depth, "data/input/PET");
     
     std::string input_folder = "data/input/generated";
@@ -73,14 +72,13 @@ int test_rigid_warp_hip(int argc, char** argv) {
 
     // ----------------------------------------
 
-    RigidWarpXYPlane transform; // Istanza della HAL per il kernel HIP
+    RigidWarpXYPlane transform; 
 
     std::printf("Loading volume into GPU...\n");
     transform.transferToGPU(host_input_volume, args.size, args.depth);
 
     std::printf("Running rigidWarpXYPlane %d time%s for warmup...\n", args.runs_warmup, args.runs_warmup != 1 ? "s" : "");
 
-    // Esecuzione di run di warmup con trasformazioni casuali
     for (int i = 0; i < args.runs_warmup; i++) {
         float warmup_tx = (float)rand() / RAND_MAX * 100.0f - 50.0f;
         float warmup_ty = (float)rand() / RAND_MAX * 100.0f - 50.0f;

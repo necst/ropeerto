@@ -33,13 +33,6 @@ void compute(hls::stream<hls::axis<ap_uint<INPUT_DATA_BITWIDTH>, 0, 0, 0>> & inp
 	//If not set, the PE memories will accumulate over different iterations.
 	//It is set to 1 at the end of the data flow.
 
-
-// ATTENTO:
-	// INLINE era default, quindi faceva l'INLINE di una sola funzione.
-		// opzione 1: lo tolgo, perchè VITIS fa automaticamente l'Inline di piccole funzioni
-		// opzione 2: lo lascio OFF, cosi forzo a non fare l'INLINE
-		// opzione 3: lo lascio RECURSIVE, per fare inlining su più livelli
-// Cosa fa Inline?
 /*
  * Removes a function as a separate entity in the hierarchy.
  * After inlining, the function is dissolved into the calling function and
@@ -51,11 +44,6 @@ void compute(hls::stream<hls::axis<ap_uint<INPUT_DATA_BITWIDTH>, 0, 0, 0>> & inp
  * so if the parent function calls the inlined function multiple times,
  * this can increase the area required for implementing the RTL.
  * */
-
-// per adesso lascio commentato
-// #ifndef CACHING
-// 	#pragma HLS INLINE RECURSIVE
-// #endif
 
 #pragma HLS DATAFLOW
 
@@ -199,57 +187,6 @@ unsigned padding = 0;
 	compute(input_img, input_ref, mutual_info, n_couples_value, padding);
 }
 
-
-/*
-#else // CACHING
-
-
-#ifdef KERNEL_NAME
-extern "C"{
-	void KERNEL_NAME
-#else
-	void mutual_information_master
-#endif //KERNEL_NAME
-( hls::axis<ap_uint<INPUT_DATA_BITWIDTH>, 0, 0, 0> & input_img,  data_t * mutual_info, unsigned int functionality, int *status, unsigned int n_couples){
-#pragma HLS INTERFACE m_axi port=input_img depth=fifo_in_depth offset=slave bundle=gmem0
-#pragma HLS INTERFACE m_axi port=mutual_info depth=1 offset=slave bundle=gmem2
-#pragma HLS INTERFACE m_axi port=status depth=1 offset=slave bundle=gmem1
-
-#pragma HLS INTERFACE s_axilite port=input_img bundle=control
-#pragma HLS INTERFACE s_axilite port=mutual_info register bundle=control
-#pragma HLS INTERFACE s_axilite port=functionality register bundle=control
-#pragma HLS INTERFACE s_axilite port=status register bundle=control
-#pragma HLS INTERFACE s_axilite port=return bundle=control
-#pragma HLS INTERFACE s_axilite port=n_couples register bundle=control
-
-
-static INPUT_DATA_TYPE ref_img[n_couples * DIMENSION * DIMENSION] = {0};
-
-#ifdef URAM
-#pragma HLS RESOURCE variable=ref_img core=RAM_1P_URAM
-#endif //URAM
-
-	switch(functionality){
-	case LOAD_IMG:	copyData<INPUT_DATA_TYPE, NUM_INPUT_DATA>(input_img, ref_img);
-					*status = 1;
-					*mutual_info = 0.0;
-					break;
-	case COMPUTE:	if(n_couples > N_COUPLES_MAX)
-						n_couples = N_COUPLES_MAX;
-					compute_loop_2: for(int k = 0; k < n_couples; k++) {
-						#pragma HLS LOOP_TRIPCOUNT min=1 max=maxCouples
-						compute(input_img + k * DIMENSION * DIMENSION / HIST_PE, input_ref + k * DIMENSION * DIMENSION / HIST_PE, mutual_info, k == n_couples - 1, n_couples);
-					}
-					*status = 1;
-					break;
-	default:		*status = -1;
-					*mutual_info = 0.0;
-					break;
-	}
-}
-
-#endif //CACHING
-*/
 #ifdef KERNEL_NAME
 
 } // extern "C"

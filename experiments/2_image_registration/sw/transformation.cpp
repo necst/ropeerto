@@ -1,6 +1,6 @@
 #include <hip/hip_runtime.h>
 #include <iostream>
-// include folder for read volume from folder
+// include folder to read volume from folder
 #include "HIPRigidWarp3D/src/hip_kernels/rigid_warp_xy_plane/rigidWarpXYPlane.hpp"
 #include "HIPRigidWarp3D/src/utils/images_io.h"
 
@@ -91,7 +91,7 @@ int main(int argc, char **argv) {
   std::cout << "Loading reference volume...\n";
   read_volume_from_folder(host_reference_volume, size, depth, CT_folder);
 
-  RigidWarpXYPlane transform; // Istanza della HAL per il kernel HIP
+  RigidWarpXYPlane transform; // HAL Instance for the HIP kernel
 
   for (int i = 0; i < runs_warmup; i++) {
     float warmup_tx = (float)rand() / RAND_MAX * 100.0f - 50.0f;

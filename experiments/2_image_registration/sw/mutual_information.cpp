@@ -293,7 +293,7 @@ int main(int argc, char **argv) {
   coyote_thread.userUnmap((void *)n_couples_mem);
 
 #else
-  // 2) Initialize XRT/AIE and load bitstream
+  // 2) Initialize XRT and load bitstream
   xrt::device device(DEFAULT_DEVICE_ID);
   auto uuid = device.load_xclbin(xclbin_path);
   xrt::kernel krnl(device, uuid, "mutual_information_master");

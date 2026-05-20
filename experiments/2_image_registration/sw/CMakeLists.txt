@@ -25,7 +25,7 @@ endif()
 
 
 # --------------------------------------------------------
-# 1) Impostazioni ROCm/HIP
+# 1) ROCm/HIP
 # --------------------------------------------------------
 if(NOT DEFINED ROCM_PATH)
     if(DEFINED ENV{ROCM_PATH})
@@ -87,7 +87,7 @@ if(NOT DEFINED ROCM_PATH)
     CACHE STRING "HIP GPU architectures to compile for")
     
 # --------------------------------------------------------
-# 3) Sorgenti e include
+# 3) Source and Include
 # --------------------------------------------------------
 set(SOURCES
   ${SRC}
@@ -206,7 +206,7 @@ target_link_libraries(p2p_baseline PRIVATE
 )
 
 # --------------------------------------------------------
-# 5) Opzioni di compilazione
+# 5) Compiler Flags
 # --------------------------------------------------------
 target_compile_features(p2p_baseline PRIVATE cxx_std_17)
 target_compile_options(p2p_baseline PRIVATE -O3)

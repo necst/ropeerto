@@ -1,5 +1,5 @@
 #include "rigidWarpXYPlane.hpp"
-#include <cmath> // Per cosf, sinf, sqrt, ceil
+#include <cmath> 
 #include <cstdio>
 #include <hip/hip_runtime.h>
 #include <hsa/hsa.h>
