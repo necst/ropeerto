@@ -15,8 +15,7 @@ To build only:
 ```shell
 make all
 ```
-Note: `Makefile` written for Windows. If you are using Linux, you may need to somehow fix the `Makefile`.
-`
+
 
 # Input/output volumes
 Input and output volumes are stored in subfolders of `data/input` and `data/output` respectively. Automatically generated input volumes are stored in `data/input/generated` and are removed with `make clean`.
