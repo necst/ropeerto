@@ -5,9 +5,9 @@ This directory contains the software and hardware source code for the results of
 ![Image registration heuristic that iteratively aligns a floating volume with respect to its reference.](figures/application.jpg)
 
 
-The following is a brief guide on compiling and running this specific experiment presented in the paper. Most experiments consists of two folders: `hw` (hardware) and `sw` (software), both of which are built using `make`.
+The following is a brief guide on compiling and running this specific experiment presented in the paper. Most experiments consist of two folders: `hw` (hardware) and `sw` (software), both of which are built using `make`.
 
-Environment requirements & set-up
+## Environment Requirements and Setup
 The following requirements must be met to run the experiments:
 
 - Hardware:
@@ -124,7 +124,7 @@ Once complete, a bitstream can be found in: `hw/build/bitstreams/cyt_top.bit`. O
 
 **N.B.:** Since hardware synthesis can take hours, we provide a pre-generated bitstream for the AMD Alveo u55c platform, found in `hw/bitstream/cyt_top.bit` (or one-sided).
 
-The provided design targets the **U55C** platform, indentically to the one that can be synthesized by following the steps described below. It features:
+The provided design targets the **U55C** platform, identically to the one that can be synthesized by following the steps described below. It features:
 
 - **16 Processing Elements (PEs)** for histogram computation  
 - **16 Processing Elements (PEs)** for entropy computation  
@@ -141,12 +141,14 @@ cd <Ropeerto-root>/Coyote/driver/
 make
 ```
 
-Once complete, a driver module can be foind in `Coyote/driver/build/coyote_driver.ko`
+Once complete, a driver module can be found in `Coyote/driver/build/coyote_driver.ko`
 
 **N.B.:** The driver must always be compiled on the node used for running experiments (e.g., hacc-box-03), as the build and experiment nodes may have different versions of Linux.
 
 #### Loading Driver and Bitstream
-According to Coyote Instruction: 
+#### Loading Driver and Bitstream
+
+According to the Coyote instructions:
 ```bash
 ./<ropeerto-root>/Coyote/util/program_hacc_local.sh <path-to-bitstream> <path-to-cyt-coyote_driver.ko> <device_id>
 ```

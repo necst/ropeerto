@@ -2,7 +2,7 @@
 
 This directory contains the software and hardware source code for the results of Section 4 of the EuroSys'26 paper: *RoPeerTo: A Datacenter-Scale Architecture for Peer-To-Peer DMA between GPUs and FPGAs*.
 
-The following is a brief guide on compiling and running this specific experiment presented in the paper. Most experiments consists of two folders: `hw` (hardware) and `sw` (software), both of which are built using `make`. For experiments described in Section 4, there are additional sub-folders: `two_sided` (results from Section 4.1, 4.2, 4.3) or `one_sided` (reults from Section 4.4) inside the folders `hw`/ `sw`. `two_sided` refers to host-initiated bidirectional (read & write) transfers, and hardware-initiated, `one_sided` (read or write) transfers. 
+The following is a brief guide on compiling and running this specific experiment presented in the paper. Most experiments consist of two folders: `hw` (hardware) and `sw` (software), both of which are built using `make`. For experiments described in Section 4, there are additional sub-folders: `two_sided` (results from Section 4.1, 4.2, 4.3) or `one_sided` (results from Section 4.4) inside the folders `hw`/ `sw`. `two_sided` refers to host-initiated bidirectional (read & write) transfers, and hardware-initiated, `one_sided` (read or write) transfers. 
 
 ## Environment requirements & set-up
 The following requirements must be met to run the experiments:
@@ -80,7 +80,7 @@ Once complete, a binary can be found in: `sw/two_sided/build/test`.
 ## Running the examples
 
 #### Deploying the examples
-To run the examples, it's necessary to load the bitstream and insert the driver. We sowec
+To run the examples, it is necessary to load the bitstream and insert the driver.
 
 **1. HACC:** On the HACC, the deployment is simplified through the `hdev` (HACC Development) tool, which allows us to easily program the FPGA and insert a driver. For this purpose, the script `util/program_hacc_local.sh` has been created:
 ```bash
