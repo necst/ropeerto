@@ -45,6 +45,10 @@
 #include <coyote/cBench.hpp>
 #include <coyote/cThread.hpp>
 
+// Project classes includes
+#include "PerfMetrics.hpp"
+#include "PerfMonitor.hpp"
+
 // Current bitstream is only synthesized with one vFPGA for simple pass-through data movement
 #define DEFAULT_VFPGA_ID 0
 
@@ -71,127 +75,6 @@ typedef std::pair<void*, void*> cpu_mem_pair_t;
                   << __LINE__ << std::endl;    \
     }                                          \
 }
-
-/**
- * @brief Class for monitoring GPU performance
- *
- * This class uses the ROCm SMI library to monitor the GPU power and utilization.
- * It runs in a separate thread, sampling the GPU power and utilization at regular intervals.
- * The results can be accessed via avg_power() and avg_util() methods.
- */
-class PerfMonitor {
-public:
-    PerfMonitor(uint32_t gpu_id) : gpu_id(gpu_id), running(false) {
-        rsmi_init(0);
-    }
-
-    ~PerfMonitor() {
-        stop();
-        rsmi_shut_down();
-    }
-
-    void start() {
-        running = true;
-        samples.clear();
-        sampling_thread = std::thread([&]() {
-            while (running) {
-                uint64_t power;
-                RSMI_POWER_TYPE power_type = RSMI_CURRENT_POWER;
-                rsmi_dev_power_get(gpu_id, &power, &power_type);    // GPU power, Microwatts
-
-                uint32_t utilization;
-                rsmi_dev_busy_percent_get(gpu_id, &utilization);    // GPU utilization in %
-
-                samples.push_back({(double) power / 1e6, (double) utilization});
-
-                // Sleep for 100 microseconds before the next sample
-                // Hence, this sampling only makes sense for larger transfers
-                std::this_thread::sleep_for(std::chrono::microseconds(100));
-            }
-        });
-    }
-
-    void stop() {
-        running = false;
-        if (sampling_thread.joinable()) sampling_thread.join();
-    }
-
-    double avg_power() const {
-        double sum = 0; 
-        for (auto &s : samples) {
-            sum += s.first;
-        }
-        return samples.empty() ? 0.0 : sum / samples.size();
-    }
-
-    double avg_util() const {
-        double sum = 0; 
-        for (auto &s : samples) {
-            sum += s.second;
-        }
-        return samples.empty() ? 0.0 : sum / samples.size();
-    }
-
-private:
-    bool running;
-    uint32_t gpu_id;
-    std::thread sampling_thread;
-    std::vector<std::pair<double, double>> samples; // (GPU power W, utilization %)
-};
-
-/**
- * @brief Utility class for collecting and storing performance metrics
- *
- * This class collects performance metrics such as latencies, GPU power, and GPU utilization.
- * It provides methods to add new metrics, retrieve all metrics of a specific kind, and calculate
- */
-class PerfMetrics {    
-public:
-    PerfMetrics() {};
-
-    void add_new(double latency, double gpu_power, double gpu_util) {
-        latencies.push_back(latency);
-        gpu_powers.push_back(gpu_power);
-        gpu_utils.push_back(gpu_util);
-    }
-
-    std::vector<double> get_all(std::string kind) {
-        if (kind == "latency") {
-            return latencies;
-        } else if (kind == "gpu_power") {
-            return gpu_powers;
-        } else if (kind == "gpu_util") {
-            return gpu_utils;
-        } else {
-            throw std::runtime_error("Unknown kind of performance metric requested: " + kind);
-        }
-    }
-
-    double get_average(std::string kind) {
-        if (kind == "latency") {
-            return vector_average(latencies);
-        } else if (kind == "gpu_power") {
-            return vector_average(gpu_powers);
-        } else if (kind == "gpu_util") {
-            return vector_average(gpu_utils);
-        } else {
-            throw std::runtime_error("Unknown kind of performance metric requested: " + kind);
-        }
-    }
-
-private:
-    std::vector<double> latencies;
-    std::vector<double> gpu_powers;
-    std::vector<double> gpu_utils;
-
-    double vector_average(std::vector<double> &vec) {
-        double sum = 0.0;
-        for (const auto &val : vec) {
-            sum += val;
-        }
-        return vec.empty() ? 0.0 : sum / vec.size();
-    }
-};
 
 /**
  * @brief Utility function which stores the results of a benchmark to a CSV file
